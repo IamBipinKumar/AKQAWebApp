@@ -1,5 +1,9 @@
-﻿@{
-    ViewBag.Title = "AKQA Test";
+﻿@using AKQAWebApp.Models
+@model HomeViewModel
+@{
+                /**/
+
+                ViewBag.Title = "AKQA Test";
 }
 
 <div class="jumbotron">
@@ -37,7 +41,7 @@
             Number: $('#Number').val()
         }
         $.ajax({
-            url: "http://localhost:53871/api/Home?name=" + reqData.Name + "&number=" + reqData.Number,
+            url: '@Model.ServiceBaseUrl' + "api/Home?name=" + reqData.Name + "&number=" + reqData.Number,
             type: 'GET',
             async: true,
             dataType: 'jsonp',

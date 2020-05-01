@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace AKQAWebApp.Controllers
+﻿namespace AKQAWebApp.Controllers
 {
+    using AKQAWebApp.Models;
+    using System.Web.Mvc;
+
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View();
+            HomeViewModel viewModel = new HomeViewModel
+            {
+                ServiceBaseUrl = "http://localhost:53871/"
+            };
+            return View(viewModel);
         }
     }
 }
